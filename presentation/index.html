@@ -31,7 +31,9 @@
 				<section>
 					<h3>David Stanich</h3>
 					<p>Software Engineer @ IBM Watson Health</p>
-					<p style="margin-top: 5em;">@dstanich on <a href="http://www.twitter.com/dstanich">Twitter</a>, <a href="https://github.com/dstanich">Github</a></p>
+					<p>@dstanich on <a href="http://www.twitter.com/dstanich">Twitter</a>, <a href="https://github.com/dstanich">Github</a></p>
+
+					<p style="margin-top: 3em;">Experienced in ng1; new to ng2</p>
 				</section>
 
 				<section>
@@ -301,24 +303,102 @@ ng serve
 							</tr>
 						</table>
 					</section>
+
+					<section>
+						<h1>DEMO</h1>
+					</section>
 				</section>
 
 				<section>
-					<h3>Exploring Components</h3>
+					<section>
+						<h3>Exploring Components</h3>
 
-					<p style="margin-top: 2em">Foundations behind components:</p>
-					<ol>
-						<li>Encapsulated</li>
-						<li>Inputs</li>
-						<li>Outputs</li>
-						<li>Events</li>
-					</ol>
+						<p style="margin-top: 2em">Foundations behind components:</p>
+						<ol>
+							<li>Encapsulated</li>
+							<li>Inputs</li>
+							<li>Outputs</li>
+							<li>Observables</li>
+						</ol>
+					</section>
+
+					<section>
+						<h3>Encapsulation</h3>
+
+						<ol>
+							<li>Emulates shadow-dom</li>
+							<li>Component responsible for own data</li>
+							<li>Built to be composable</li>
+							<li>Eliminates 'scope soup' from ng1</li>
+							<li>Dep. injection for services</li>
+						</ol>
+					</section>
+
+					<section>
+						<h3>Input/Output</h3>
+
+						<p>Properties as part of component definition</p>
+						<table style="font-size: 75%;">
+							<tr>
+								<td><code>inputs</code></td>
+								<td>Names of properties which may be passed in via square brackets</td>
+								<td>[userName]</td>
+							</tr>
+							<tr>
+								<td><code>outputs</code></td>
+								<td>Names of events which may be listened to with parentheses</td>
+								<td>(userNameChanged)</td>
+							</tr>
+							<tr>
+								<td><code>input+output</code></td>
+								<td>Acts as both an input and output (two way binding)</td>
+								<td>[(userName)]</td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<h3>Input/Output</h3>
+
+						<p>Definition:</p>
+						<pre><code data-trim class="typescript">
+@Component({
+	selector: 'my-comp',
+	outputs: ['userChanged']  // May trigger a userChanged event
+	inputs: ['user']          // Accepts a input property called user
+})
+						</code></pre>
+
+						<p>Usage:</p>
+						<pre><code data-trim class="html">
+<my-comp 
+	[user]="incomingUserVar" 
+	(userChanged)="userHasChanged()">
+</my-comp>
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Observables and RxJS</h3>
+
+						<p style="text-align: left">ng2 encourages usage of reactive programming via <a href="https://github.com/Reactive-Extensions/RxJS">RxJS</a> or similar.</p>
+						<p style="text-align: left">A little complicated to grasp at first</p>
+						<p style="text-align: left">Used in things like http requests and events</p>
+					</section>
+
+					<section>
+						<h1>DEMO</h1>
+						<a style="font-size: .5em" href="https://github.com/dstanich/ts-angular2-examples">https://github.com/dstanich/ts-angular2-examples</a>
+					</section>
 				</section>
 
 				<section>
-					<h3>Code/Presentation</h3>
-					<p style="text-align: left; margin-top: 2em;"><b>Code:</b> <a href="https://github.com/dstanich/ts-angular2-examples">https://github.com/dstanich/ts-angular2-examples</a></p>
-					<p style="text-align: left;"><b>Presentation:</b> <a href="https://github.com/dstanich/ts-angular2-intro">todo</a></p>
+					<h3>Resources</h3>
+					<p style="text-align: left; margin-top: 2em; font-size: 75%;"><b>Sample code:</b> <a href="https://github.com/dstanich/ts-angular2-examples">https://github.com/dstanich/ts-angular2-examples</a></p>
+					<p style="text-align: left;font-size: 75%;"><b>Presentation:</b> <a href="https://dstanich.github.io/ts-angular2-examples">https://dstanich.github.io/ts-angular2-examples</a></p>
+					<p style="text-align: left;margin-top: 2em;font-size: 75%;"><b>Angular2 docs:</b> <a href="https://angular.io/docs/ts/latest/">https://angular.io/docs/ts/latest/</a></p>
+					<p style="text-align: left;font-size: 75%;"><b>ng-book2:</b> <a href="https://www.ng-book.com/2/">https://www.ng-book.com/2/</a></p>
+					<p style="text-align: left;font-size: 75%;"><b>TypeScript tutorial:</b> <a href="https://www.typescriptlang.org/docs/tutorial.html">https://www.typescriptlang.org/docs/tutorial.html</a></p>
 				</section>
 			</div>
 		</div>
