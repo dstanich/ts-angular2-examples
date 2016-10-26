@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
 	styleUrls: ['./content-area.component.css']
 })
 export class ContentAreaComponent {
+	currentName: string;
 	
 	constructor() { }
+
+	formChanged(value: string) {
+		console.log('formChanged()', value);
+		this.currentName = value;
+	}
+
 }

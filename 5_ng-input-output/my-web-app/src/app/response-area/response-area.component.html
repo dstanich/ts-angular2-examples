@@ -1,0 +1,8 @@
+<div class="response-area-container">
+	<div *ngIf="!name">
+		<b>No name has been set</b>
+	</div>
+	<div *ngIf="name">
+		Hello <b>{{name}}</b>!  This value was set through an EventEmitter and passed in via inputs.
+	</div>
+</div>
