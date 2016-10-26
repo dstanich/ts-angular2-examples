@@ -1,0 +1,13 @@
+<div class="inventory-results-container">
+	<b>Inventory results:</b>
+
+	<div *ngIf="!inventory || inventory.length === 0">
+		No inventory for user
+	</div>
+
+	<div *ngIf="inventory && inventory.length > 0">
+		<ul>
+			<li *ngFor="let obj of inventory">x{{obj.quantity}} {{obj.text}}</li>
+		</ul>
+	</div>
+</div>

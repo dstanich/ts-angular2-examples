@@ -1,0 +1,10 @@
+<div class="response-area-container">
+	<div *ngIf="!name">
+		<b>No name has been set.  Try entering names 'david', 'frank', or 'james' to see inventory.</b>
+	</div>
+	<div *ngIf="name">
+		Hello <b>{{name}}</b>!  This value was set through an EventEmitter and passed in via inputs.
+
+		<app-inventory-results [user]="name"></app-inventory-results>
+	</div>
+</div>
