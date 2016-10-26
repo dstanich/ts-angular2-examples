@@ -1,5 +1,4 @@
 # TypeScript and Angular2 Examples
-Examples used for educational purposes on both TypeScript and Angular2.
+This branch contains a presentation for the examples in the `master` branch.  To view the presentation, open `index.html` via Github Pages:
 
-## Directories
-Directories contain examples for various things that can be done in TypeScript.
+https://dstanich.github.io/ts-angular2-examples
